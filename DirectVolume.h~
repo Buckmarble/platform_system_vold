@@ -21,9 +21,11 @@
 
 #include "Volume.h"
 
+<<<<<<< HEAD
 #ifndef VOLD_MAX_PARTITIONS
 #define VOLD_MAX_PARTITIONS 32
 #endif
+=======
 class PathInfo {
 public:
 	PathInfo(const char *pattern);
@@ -35,6 +37,7 @@ private:
 	enum PatternType { prefix, wildcard };
 	PatternType patternType;
 };
+>>>>>>> remotes/lollipop-release/lollipop-release
 
 typedef android::List<PathInfo *> PathCollection;
 

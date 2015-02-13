@@ -56,9 +56,12 @@ CommandListener::CommandListener() :
 #ifndef MINIVOLD
     registerCmd(new AsecCmd());
     registerCmd(new ObbCmd());
+<<<<<<< HEAD
     registerCmd(new XwarpCmd());
+=======
     registerCmd(new StorageCmd());
     registerCmd(new CryptfsCmd());
+>>>>>>> remotes/lollipop-release/lollipop-release
     registerCmd(new FstrimCmd());
 #endif
 }
@@ -567,6 +570,7 @@ static int getType(const char* type)
     } else {
         return -1;
     }
+<<<<<<< HEAD
 
     return 0;
 }
@@ -574,6 +578,8 @@ static int getType(const char* type)
 
 CommandListener::CryptfsCmd::CryptfsCmd() :
                  VoldCommand("cryptfs") {
+=======
+>>>>>>> remotes/lollipop-release/lollipop-release
 }
 
 int CommandListener::CryptfsCmd::runCommand(SocketClient *cli,

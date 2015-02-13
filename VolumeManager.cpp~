@@ -54,6 +54,8 @@
 #include "Asec.h"
 #include "cryptfs.h"
 
+<<<<<<< HEAD
+=======
 #define MASS_STORAGE_FILE_PATH  "/sys/class/android_usb/android0/f_mass_storage/lun/file"
 
 #define ROUND_UP_POWER_OF_2(number, po2) (((!!(number & ((1U << po2) - 1))) << po2)\
@@ -160,6 +162,7 @@ static void waitForDevMapper(const char *dmDevice) {
     }
 }
 
+>>>>>>> remotes/lollipop-release/lollipop-release
 VolumeManager *VolumeManager::sInstance = NULL;
 
 VolumeManager *VolumeManager::Instance() {
@@ -1282,7 +1285,11 @@ int VolumeManager::mountAsec(const char *id, const char *key, int ownerUid, bool
 
     int written = snprintf(mountPoint, sizeof(mountPoint), "%s/%s", Volume::ASECDIR, id);
     if ((written < 0) || (size_t(written) >= sizeof(mountPoint))) {
+<<<<<<< HEAD
         SLOGE("ASEC mount failed: couldn't construct mountpoint %s", id);
+=======
+        SLOGE("ASEC mount failed for %s: couldn't construct mountpoint", id);
+>>>>>>> remotes/lollipop-release/lollipop-release
         return -1;
     }
 
@@ -1346,7 +1353,11 @@ int VolumeManager::mountAsec(const char *id, const char *key, int ownerUid, bool
 
     int result;
     if (sb.c_opts & ASEC_SB_C_OPTS_EXT4) {
+<<<<<<< HEAD
         result = Ext4::doMount(dmDevice, mountPoint, true, false, true, false);
+=======
+        result = Ext4::doMount(dmDevice, mountPoint, readOnly, false, readOnly);
+>>>>>>> remotes/lollipop-release/lollipop-release
     } else {
         result = Fat::doMount(dmDevice, mountPoint, readOnly, false, readOnly, ownerUid, 0, 0222, false);
     }
@@ -1394,7 +1405,11 @@ int VolumeManager::mountObb(const char *img, const char *key, int ownerGid) {
 
     int written = snprintf(mountPoint, sizeof(mountPoint), "%s/%s", Volume::LOOPDIR, idHash);
     if ((written < 0) || (size_t(written) >= sizeof(mountPoint))) {
+<<<<<<< HEAD
         SLOGE("OBB mount failed: couldn't construct mountpoint %s", img);
+=======
+        SLOGE("OBB mount failed for %s: couldn't construct mountpoint", img);
+>>>>>>> remotes/lollipop-release/lollipop-release
         return -1;
     }
 

@@ -73,10 +73,12 @@ private:
         int runCommand(SocketClient *c, int argc, char ** argv);
     };
 
+<<<<<<< HEAD
     class XwarpCmd : public VoldCommand {
     public:
         XwarpCmd();
         virtual ~XwarpCmd() {}
+=======
     class StorageCmd : public VoldCommand {
     public:
         StorageCmd();
@@ -88,6 +90,7 @@ private:
     public:
         CryptfsCmd();
         virtual ~CryptfsCmd() {}
+>>>>>>> remotes/lollipop-release/lollipop-release
         int runCommand(SocketClient *c, int argc, char ** argv);
     };
 

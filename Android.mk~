@@ -34,12 +34,15 @@ common_src_files := \
 	Loop.cpp \
 	Devmapper.cpp \
 	ResponseCode.cpp \
+<<<<<<< HEAD
 	cryptfs.c \
 	main.cpp
 
 extra_src_files := \
 	Xwarp.cpp \
+=======
 	CheckBattery.cpp \
+>>>>>>> remotes/lollipop-release/lollipop-release
 	VoldUtil.c \
 	fstrim.c \
 
@@ -50,23 +53,31 @@ common_c_includes := \
 	external/stlport/stlport \
 	bionic \
 	external/scrypt/lib/crypto \
+<<<<<<< HEAD
 	external/e2fsprogs/lib \
 	system/core/fs_mgr/include \
 	system/core/logwrapper/include
+=======
 	frameworks/native/include \
 	system/security/keystore \
 	hardware/libhardware/include/hardware \
 	system/security/softkeymaster/include/keymaster
+>>>>>>> remotes/lollipop-release/lollipop-release
 
 common_libraries := \
 	libsysutils \
+<<<<<<< HEAD
 	libcutils \
 	liblog \
 	libdiskconfig \
 	libext2_blkid \
 	liblogwrap
+=======
 	libstlport \
 	libbinder \
+	libcutils \
+	liblog \
+	libdiskconfig \
 	libhardware_legacy \
 	liblogwrap \
 	libext4_utils \
@@ -76,16 +87,20 @@ common_libraries := \
 	libutils \
 	libhardware \
 	libsoftkeymaster
+>>>>>>> remotes/lollipop-release/lollipop-release
 
 common_static_libraries := \
 	libfs_mgr \
 	libext4_utils_static \
 	libstlport_static \
 	libscrypt_static \
+<<<<<<< HEAD
 	libminshacrypt \
 	libpower
+=======
 	libmincrypt \
 	libbatteryservice
+>>>>>>> remotes/lollipop-release/lollipop-release
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libvold
@@ -108,9 +123,13 @@ include $(BUILD_EXECUTABLE)
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES:= vdc.c
 LOCAL_MODULE:= vdc
+<<<<<<< HEAD
+LOCAL_C_INCLUDES := $(KERNEL_HEADERS)
+=======
 
 LOCAL_C_INCLUDES :=
 
+>>>>>>> remotes/lollipop-release/lollipop-release
 LOCAL_CFLAGS := 
 LOCAL_SHARED_LIBRARIES := libcutils
 include $(BUILD_EXECUTABLE)

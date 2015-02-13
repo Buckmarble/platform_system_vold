@@ -510,7 +510,11 @@ static int put_crypt_ftr_and_key(struct crypt_mnt_ftr *crypt_ftr)
   /* If the keys are kept on a raw block device, do not try to truncate it. */
   if (S_ISREG(statbuf.st_mode)) {
     if (ftruncate(fd, 0x4000)) {
+<<<<<<< HEAD
       SLOGE("Cannot set footer file (%s) size\n", fname);
+=======
+      SLOGE("Cannot set footer file size\n");
+>>>>>>> remotes/lollipop-release/lollipop-release
       goto errout;
     }
   }
@@ -2151,6 +2155,7 @@ static int cryptfs_enable_wipe(char *crypto_blkdev, off64_t size, int type)
         num_args = 6;
         SLOGI("Making empty filesystem with command %s %s %s %s %s %s\n",
               args[0], args[1], args[2], args[3], args[4], args[5]);
+<<<<<<< HEAD
     } else if (type== FAT_FS) {
         args[0] = HELPER_PATH "newfs_msdos";
         args[1] = "-F";
@@ -2167,6 +2172,7 @@ static int cryptfs_enable_wipe(char *crypto_blkdev, off64_t size, int type)
         SLOGI("Making empty filesystem with command %s %s %s %s %s %s %s %s %s %s\n",
               args[0], args[1], args[2], args[3], args[4], args[5],
               args[6], args[7], args[8], args[9]);
+=======
     } else if (type == F2FS_FS) {
         args[0] = "/system/bin/mkfs.f2fs";
         args[1] = "-t";
@@ -2177,6 +2183,7 @@ static int cryptfs_enable_wipe(char *crypto_blkdev, off64_t size, int type)
         num_args = 5;
         SLOGI("Making empty filesystem with command %s %s %s %s %s\n",
               args[0], args[1], args[2], args[3], args[4]);
+>>>>>>> remotes/lollipop-release/lollipop-release
     } else {
         SLOGE("cryptfs_enable_wipe(): unknown filesystem type %d\n", type);
         return -1;
